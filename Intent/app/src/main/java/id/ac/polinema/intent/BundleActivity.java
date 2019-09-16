@@ -30,7 +30,7 @@ public class BundleActivity extends AppCompatActivity {
         String username = usernameInput.getText().toString();
         String name = nameInput.getText().toString();
         int age = Integer.parseInt(ageInput.getText().toString());
-        Intent intent = new Intent(this, ProfileBundleActivity.class);
+        Intent intent = new Intent(this, ProfileParcelableActivity.class);
         intent.putExtra(USERNAME_KEY, username);
         intent.putExtra(NAME_KEY, name);
         intent.putExtra(AGE_KEY, age);
