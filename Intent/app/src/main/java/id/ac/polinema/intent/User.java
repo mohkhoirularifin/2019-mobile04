@@ -4,7 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class User implements Parcelable {
-
     private String username;
     private String name;
     private int age;
@@ -38,7 +37,6 @@ public class User implements Parcelable {
     public void setAge(int age) {
         this.age = age;
     }
-
 
     @Override
     public int describeContents() {

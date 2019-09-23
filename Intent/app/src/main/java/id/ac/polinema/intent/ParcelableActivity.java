@@ -8,14 +8,10 @@ import android.view.View;
 import android.widget.EditText;
 
 public class ParcelableActivity extends AppCompatActivity {
-
-    public static final String USERNAME_KEY = "username";
-    public static final String NAME_KEY = "name";
-    public static final String AGE_KEY = "age";
-
     private EditText usernameInput;
     private EditText nameInput;
     private EditText ageInput;
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,19 +22,15 @@ public class ParcelableActivity extends AppCompatActivity {
         ageInput = findViewById(R.id.input_age);
     }
 
-    public void handleSubmit(View view) {
+    public void handleSubmitParcel (View view) {
         String username = usernameInput.getText().toString();
         String name = nameInput.getText().toString();
         int age = Integer.parseInt(ageInput.getText().toString());
+
+        user = new User(username, name, age);
+
         Intent intent = new Intent(this, ProfileParcelableActivity.class);
-        User user = new User(username, name, age);
-        intent.putExtra("", user);
-//        intent.putExtra(USERNAME_KEY, username);
-//        intent.putExtra(NAME_KEY, name);
-//        intent.putExtra(AGE_KEY, age);
+        intent.putExtra("user", user);
         startActivity(intent);
-
-
     }
-
 }
